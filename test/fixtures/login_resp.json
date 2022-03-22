@@ -1,0 +1,5 @@
+{
+  "refresh": "refresh_token",
+  "access": "access_token",
+  "obtain": "obtain_token"
+}
