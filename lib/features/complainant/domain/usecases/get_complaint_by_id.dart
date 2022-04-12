@@ -4,15 +4,17 @@ import 'package:renofax/core/error/failures.dart';
 import 'package:renofax/core/usecases/usecase.dart';
 import 'package:renofax/features/complainant/domain/repositories/complaint_repository.dart';
 
-import '../../data/models/complaint_test.dart';
+import '../../data/models/complaint.dart';
 
-class GetComplaintById implements UseCase<ComplaintTest, Params> {
+
+
+class GetComplaintById implements UseCase<Complaint, Params> {
   final ComplaintRepository repository;
 
   GetComplaintById({required this.repository});
 
   @override
-  Future<Either<Failure, ComplaintTest>> call(Params params) async {
+  Future<Either<Failure, Complaint>> call(Params params) async {
     return await repository.getComplaintById(params.id);
   }
 

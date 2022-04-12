@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../injection_container.dart';
-import '../../data/models/complaint_test.dart';
+import '../../data/models/complaint.dart';
 import '../../presentation/pages/complaint_detail_page.dart';
 import '../bloc/complaint_bloc.dart';
 
@@ -303,7 +303,7 @@ class ComplaintListPage extends StatelessWidget {
     );
   }
 
-  Visibility commentIndicator(ComplaintTest complaint) {
+  Visibility commentIndicator(Complaint complaint) {
     return Visibility(
       visible: _countComments(complaint.activities) > 0,
       child: Row(
@@ -325,7 +325,7 @@ class ComplaintListPage extends StatelessWidget {
     );
   }
 
-  Visibility attachIndicator(ComplaintTest complaint) {
+  Visibility attachIndicator(Complaint complaint) {
     return Visibility(
       visible: _countAttach(complaint.attachments) > 0,
       child: Row(
@@ -347,7 +347,7 @@ class ComplaintListPage extends StatelessWidget {
     );
   }
 
-  Row assignIndicatorAlternatifOne(ComplaintTest complaint) {
+  Row assignIndicatorAlternatifOne(Complaint complaint) {
     final totalAssigns = complaint.assignments!.length + 1;
     return Row(
       children: [
@@ -392,7 +392,7 @@ class ComplaintListPage extends StatelessWidget {
     );
   }
 
-  Row assignIndicatorAlternatifTwo(ComplaintTest complaint) {
+  Row assignIndicatorAlternatifTwo(Complaint complaint) {
     final totalAssigns = complaint.assignments!.length + 1;
     return Row(
       children: [

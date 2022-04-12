@@ -6,11 +6,12 @@ import 'package:renofax/core/error/exceptions.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../models/complaint_test.dart';
+import '../models/complaint.dart';
+
 
 abstract class ComplaintRemoteDataSource {
-  Future<List<ComplaintTest>> getComplaints();
-  Future<ComplaintTest> getComplaintById(int id);
+  Future<List<Complaint>> getComplaints();
+  Future<Complaint> getComplaintById(int id);
 }
 
 class ComplaintRemoteDataSourceImpl implements ComplaintRemoteDataSource {
@@ -23,7 +24,7 @@ class ComplaintRemoteDataSourceImpl implements ComplaintRemoteDataSource {
   });
 
   @override
-  Future<List<ComplaintTest>> getComplaints() async {
+  Future<List<Complaint>> getComplaints() async {
     final url = Uri.parse('https://staging.renofax.com/api/cards');
     final response = await client.get(
       url,
@@ -35,9 +36,9 @@ class ComplaintRemoteDataSourceImpl implements ComplaintRemoteDataSource {
     );
 
     if (response.statusCode == 200) {
-      return List<ComplaintTest>.from(
+      return List<Complaint>.from(
         json.decode(response.body).map(
-              (complaint) => ComplaintTest.fromJson(complaint),
+              (complaint) => Complaint.fromJson(complaint),
             ),
       );
     } else {
@@ -46,7 +47,7 @@ class ComplaintRemoteDataSourceImpl implements ComplaintRemoteDataSource {
   }
 
   @override
-  Future<ComplaintTest> getComplaintById(int id) async {
+  Future<Complaint> getComplaintById(int id) async {
     final url = Uri.parse('https://staging.renofax.com/api/cards/${id}');
     final response = await client.get(
       url,
@@ -58,7 +59,7 @@ class ComplaintRemoteDataSourceImpl implements ComplaintRemoteDataSource {
     );
 
     if (response.statusCode == 200) {
-      return ComplaintTest.fromJson(json.decode(response.body));
+      return Complaint.fromJson(json.decode(response.body));
     } else {
       throw ServerException();
     }

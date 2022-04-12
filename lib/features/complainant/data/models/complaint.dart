@@ -3,13 +3,8 @@ import 'dart:convert';
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 
-ComplaintTest complaintTestFromJson(String str) =>
-    ComplaintTest.fromJson(json.decode(str));
-
-String complaintTestToJson(ComplaintTest data) => json.encode(data.toJson());
-
-class ComplaintTest extends Equatable {
-  ComplaintTest({
+class Complaint extends Equatable {
+  Complaint({
     int? id,
     List<Attachments>? attachments,
     List<Assignments>? assignments,
@@ -49,7 +44,7 @@ class ComplaintTest extends Equatable {
     _priority = priority;
   }
 
-  ComplaintTest.fromJson(dynamic json) {
+  Complaint.fromJson(dynamic json) {
     _id = json['id'];
     if (json['attachments'] != null) {
       _attachments = [];
@@ -180,10 +175,6 @@ class ComplaintTest extends Equatable {
     List<Object?> get props => [id];
 }
 
-Vendors vendorsFromJson(String str) => Vendors.fromJson(json.decode(str));
-
-String vendorsToJson(Vendors data) => json.encode(data.toJson());
-
 class Vendors extends Equatable {
   Vendors({
     String? external,
@@ -226,11 +217,6 @@ class Vendors extends Equatable {
         created,
       ];
 }
-
-Activities activitiesFromJson(String str) =>
-    Activities.fromJson(json.decode(str));
-
-String activitiesToJson(Activities data) => json.encode(data.toJson());
 
 class Activities extends Equatable {
   Activities({
@@ -362,11 +348,6 @@ class Activities extends Equatable {
   List<Object?> get props => [id];
 }
 
-Attachments attachmentsFromJson(String str) =>
-    Attachments.fromJson(json.decode(str));
-
-String attachmentsToJson(Attachments data) => json.encode(data.toJson());
-
 class Attachments extends Equatable {
   Attachments({
     int? id,
@@ -427,11 +408,6 @@ class Attachments extends Equatable {
   List<Object?> get props => [id];
 }
 
-Assignments assignmentsFromJson(String str) =>
-    Assignments.fromJson(json.decode(str));
-
-String assignmentsToJson(Assignments data) => json.encode(data.toJson());
-
 class Assignments extends Equatable {
   Assignments({
     int? id,
@@ -485,12 +461,6 @@ class Assignments extends Equatable {
   List<Object?> get props => [id];
 }
 
-ActivityAssignment activityAssignmentsFromJson(String str) =>
-    ActivityAssignment.fromJson(json.decode(str));
-
-String activityAssignmentsToJson(ActivityAssignment data) =>
-    json.encode(data.toJson());
-
 class ActivityAssignment extends Equatable {
   ActivityAssignment({
     int? id,
@@ -543,12 +513,6 @@ class ActivityAssignment extends Equatable {
   @override
   List<Object?> get props => [id,];
 }
-
-ActivityAttachment activityAttachmentsFromJson(String str) =>
-    ActivityAttachment.fromJson(json.decode(str));
-
-String activityAttachmentsToJson(ActivityAttachment data) =>
-    json.encode(data.toJson());
 
 class ActivityAttachment extends Equatable {
   ActivityAttachment({

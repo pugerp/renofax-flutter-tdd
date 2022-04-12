@@ -7,7 +7,7 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:renofax/core/error/exceptions.dart';
 import 'package:renofax/features/complainant/data/data_sources/complaint_remote_data_source.dart';
-import 'package:renofax/features/complainant/data/models/complaint_test.dart';
+import 'package:renofax/features/complainant/data/models/complaint.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:renofax/core/assets/constantas.dart' as Constanta;
 
@@ -21,11 +21,11 @@ void main() {
   late MockSharedPreferences mockSharedPreferences;
   late Map<String, String> headers;
 
-  final tComplaints = List<ComplaintTest>.from(json
+  final tComplaints = List<Complaint>.from(json
       .decode(fixture('complaints.json'))
-      .map((c) => ComplaintTest.fromJson(c)));
+      .map((c) => Complaint.fromJson(c)));
 
-  final tComplaint = ComplaintTest.fromJson(json.decode(fixture('complaint.json')));
+  final tComplaint = Complaint.fromJson(json.decode(fixture('complaint.json')));
 
   setUp(() {
     mockClient = MockClient();

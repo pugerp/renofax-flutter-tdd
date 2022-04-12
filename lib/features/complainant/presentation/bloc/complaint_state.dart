@@ -10,12 +10,12 @@ abstract class ComplaintState extends Equatable {
 class Initial extends ComplaintState {}
 class Loading extends ComplaintState {}
 class Success extends ComplaintState {
-  final List<ComplaintTest> complaints;
+  final List<Complaint> complaints;
 
   Success({required this.complaints});
 }
 class SuccessById extends ComplaintState {
-  final ComplaintTest complaint;
+  final Complaint complaint;
 
   SuccessById({required this.complaint});
 }

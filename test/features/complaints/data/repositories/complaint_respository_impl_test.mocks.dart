@@ -8,8 +8,7 @@ import 'package:mockito/mockito.dart' as _i1;
 import 'package:renofax/core/network/network_info.dart' as _i5;
 import 'package:renofax/features/complainant/data/data_sources/complaint_remote_data_source.dart'
     as _i3;
-import 'package:renofax/features/complainant/data/models/complaint_test.dart'
-    as _i2;
+import 'package:renofax/features/complainant/data/models/complaint.dart' as _i2;
 
 // ignore_for_file: avoid_redundant_argument_values
 // ignore_for_file: avoid_setters_without_getters
@@ -20,7 +19,7 @@ import 'package:renofax/features/complainant/data/models/complaint_test.dart'
 // ignore_for_file: unnecessary_parenthesis
 // ignore_for_file: camel_case_types
 
-class _FakeComplaintTest_0 extends _i1.Fake implements _i2.ComplaintTest {}
+class _FakeComplaint_0 extends _i1.Fake implements _i2.Complaint {}
 
 /// A class which mocks [ComplaintRemoteDataSource].
 ///
@@ -32,17 +31,15 @@ class MockComplaintRemoteDataSource extends _i1.Mock
   }
 
   @override
-  _i4.Future<List<_i2.ComplaintTest>> getComplaints() =>
+  _i4.Future<List<_i2.Complaint>> getComplaints() =>
       (super.noSuchMethod(Invocation.method(#getComplaints, []),
-              returnValue:
-                  Future<List<_i2.ComplaintTest>>.value(<_i2.ComplaintTest>[]))
-          as _i4.Future<List<_i2.ComplaintTest>>);
+              returnValue: Future<List<_i2.Complaint>>.value(<_i2.Complaint>[]))
+          as _i4.Future<List<_i2.Complaint>>);
   @override
-  _i4.Future<_i2.ComplaintTest> getComplaintById(int? id) =>
+  _i4.Future<_i2.Complaint> getComplaintById(int? id) =>
       (super.noSuchMethod(Invocation.method(#getComplaintById, [id]),
-              returnValue:
-                  Future<_i2.ComplaintTest>.value(_FakeComplaintTest_0()))
-          as _i4.Future<_i2.ComplaintTest>);
+              returnValue: Future<_i2.Complaint>.value(_FakeComplaint_0()))
+          as _i4.Future<_i2.Complaint>);
 }
 
 /// A class which mocks [NetworkInfo].

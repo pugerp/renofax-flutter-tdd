@@ -5,7 +5,7 @@ import 'package:renofax/core/network/network_info.dart';
 
 import '../../domain/repositories/complaint_repository.dart';
 import '../data_sources/complaint_remote_data_source.dart';
-import '../models/complaint_test.dart';
+import '../models/complaint.dart';
 
 class ComplaintRepositoryImpl implements ComplaintRepository {
   final ComplaintRemoteDataSource complaintRemote;
@@ -17,7 +17,7 @@ class ComplaintRepositoryImpl implements ComplaintRepository {
   });
 
   @override
-  Future<Either<Failure, List<ComplaintTest>>> getComplaints() async {
+  Future<Either<Failure, List<Complaint>>> getComplaints() async {
     if (await networkInfo.isConnected) {
       try {
         final response = await complaintRemote.getComplaints();
@@ -35,7 +35,7 @@ class ComplaintRepositoryImpl implements ComplaintRepository {
   }
 
   @override
-  Future<Either<Failure, ComplaintTest>> getComplaintById(int id) async {
+  Future<Either<Failure, Complaint>> getComplaintById(int id) async {
     if (await networkInfo.isConnected) {
       try {
         final response = await complaintRemote.getComplaintById(id);

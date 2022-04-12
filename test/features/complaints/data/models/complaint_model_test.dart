@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:developer';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:renofax/features/complainant/data/models/complaint_test.dart';
+import 'package:renofax/features/complainant/data/models/complaint.dart';
 
 import '../../../../fixtures/fixture_reader.dart';
 
@@ -129,7 +129,7 @@ void main() {
     card: 0,
     priorityChange: 0,
   );
-  final tComplaint = ComplaintTest(
+  final tComplaint = Complaint(
     id: 0,
     attachments: [tAttachment],
     assignments: [tAssignment],
@@ -151,12 +151,12 @@ void main() {
   );
 
   test('tComplaint is a ComplaintModel', () {
-    expect(tComplaint, isA<ComplaintTest>());
+    expect(tComplaint, isA<Complaint>());
   });
 
   group('Model Complaint', () {
     test('should return a valid model from JSON response', () {
-      final result = ComplaintTest.fromJson(json.decode(fixture('complaint.json')));
+      final result = Complaint.fromJson(json.decode(fixture('complaint.json')));
       expect(result, tComplaint);
     });
 

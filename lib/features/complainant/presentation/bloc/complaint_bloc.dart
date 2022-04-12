@@ -5,7 +5,7 @@ import 'package:equatable/equatable.dart';
 import 'package:renofax/core/usecases/usecase.dart';
 import 'package:renofax/features/complainant/domain/usecases/get_complaint_by_id.dart';
 
-import '../../data/models/complaint_test.dart';
+import '../../data/models/complaint.dart';
 import '../../domain/usecases/get_complaints.dart';
 
 part 'complaint_event.dart';

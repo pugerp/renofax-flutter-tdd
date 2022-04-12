@@ -6,7 +6,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:renofax/core/usecases/usecase.dart';
-import 'package:renofax/features/complainant/data/models/complaint_test.dart';
+import 'package:renofax/features/complainant/data/models/complaint.dart';
 import 'package:renofax/features/complainant/domain/repositories/complaint_repository.dart';
 import 'package:renofax/features/complainant/domain/usecases/get_complaints.dart';
 
@@ -18,9 +18,9 @@ void main() {
   late GetComplaints usecase;
   late MockComplaintRepository mockComplaintRepository;
 
-  final tComplaints = List<ComplaintTest>.from(json
+  final tComplaints = List<Complaint>.from(json
       .decode(fixture('complaints.json'))
-      .map((c) => ComplaintTest.fromJson(c)));
+      .map((c) => Complaint.fromJson(c)));
 
   setUp((){
     mockComplaintRepository = MockComplaintRepository();

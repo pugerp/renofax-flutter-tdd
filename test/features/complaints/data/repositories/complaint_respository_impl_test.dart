@@ -8,7 +8,7 @@ import 'package:renofax/core/error/exceptions.dart';
 import 'package:renofax/core/error/failures.dart';
 import 'package:renofax/core/network/network_info.dart';
 import 'package:renofax/features/complainant/data/data_sources/complaint_remote_data_source.dart';
-import 'package:renofax/features/complainant/data/models/complaint_test.dart';
+import 'package:renofax/features/complainant/data/models/complaint.dart';
 import 'package:renofax/features/complainant/data/repositories/complaint_repository_impl.dart';
 import 'package:renofax/features/complainant/domain/repositories/complaint_repository.dart';
 
@@ -21,11 +21,11 @@ void main() {
   late MockNetworkInfo mockNetworkInfo;
   late MockComplaintRemoteDataSource mockComplaintRemoteDataSource;
 
-  final tComplaints = List<ComplaintTest>.from(json
+  final tComplaints = List<Complaint>.from(json
       .decode(fixture('complaints.json'))
-      .map((c) => ComplaintTest.fromJson(c)));
+      .map((c) => Complaint.fromJson(c)));
 
-  final tComplaint = ComplaintTest.fromJson(json.decode(fixture('complaint.json')));
+  final tComplaint = Complaint.fromJson(json.decode(fixture('complaint.json')));
 
   final tComplaintId = 1;
 

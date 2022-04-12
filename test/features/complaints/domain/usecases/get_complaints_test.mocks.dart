@@ -7,8 +7,7 @@ import 'dart:async' as _i4;
 import 'package:dartz/dartz.dart' as _i2;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:renofax/core/error/failures.dart' as _i5;
-import 'package:renofax/features/complainant/data/models/complaint_test.dart'
-    as _i6;
+import 'package:renofax/features/complainant/data/models/complaint.dart' as _i6;
 import 'package:renofax/features/complainant/domain/repositories/complaint_repository.dart'
     as _i3;
 
@@ -33,18 +32,17 @@ class MockComplaintRepository extends _i1.Mock
   }
 
   @override
-  _i4.Future<_i2.Either<_i5.Failure, List<_i6.ComplaintTest>>>
-      getComplaints() => (super.noSuchMethod(
-          Invocation.method(#getComplaints, []),
-          returnValue:
-              Future<_i2.Either<_i5.Failure, List<_i6.ComplaintTest>>>.value(
-                  _FakeEither_0<_i5.Failure, List<_i6.ComplaintTest>>())) as _i4
-          .Future<_i2.Either<_i5.Failure, List<_i6.ComplaintTest>>>);
+  _i4.Future<_i2.Either<_i5.Failure, List<_i6.Complaint>>> getComplaints() =>
+      (super.noSuchMethod(Invocation.method(#getComplaints, []),
+              returnValue:
+                  Future<_i2.Either<_i5.Failure, List<_i6.Complaint>>>.value(
+                      _FakeEither_0<_i5.Failure, List<_i6.Complaint>>()))
+          as _i4.Future<_i2.Either<_i5.Failure, List<_i6.Complaint>>>);
   @override
-  _i4.Future<_i2.Either<_i5.Failure, _i6.ComplaintTest>> getComplaintById(
+  _i4.Future<_i2.Either<_i5.Failure, _i6.Complaint>> getComplaintById(
           int? id) =>
       (super.noSuchMethod(Invocation.method(#getComplaintById, [id]),
-          returnValue: Future<_i2.Either<_i5.Failure, _i6.ComplaintTest>>.value(
-              _FakeEither_0<_i5.Failure, _i6.ComplaintTest>())) as _i4
-          .Future<_i2.Either<_i5.Failure, _i6.ComplaintTest>>);
+              returnValue: Future<_i2.Either<_i5.Failure, _i6.Complaint>>.value(
+                  _FakeEither_0<_i5.Failure, _i6.Complaint>()))
+          as _i4.Future<_i2.Either<_i5.Failure, _i6.Complaint>>);
 }

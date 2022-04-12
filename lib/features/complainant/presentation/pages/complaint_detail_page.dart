@@ -4,7 +4,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:renofax/features/complainant/presentation/bloc/complaint_bloc.dart';
 
 import '../../../../injection_container.dart';
-import '../../data/models/complaint_test.dart';
+import '../../data/models/complaint.dart';
 
 class ComplaintDetailPage extends StatelessWidget {
   static const nameRoute = '/complaint_detail_page';
@@ -118,7 +118,7 @@ class ComplaintDetailPage extends StatelessWidget {
 }
 
 class ActivitiesTab extends StatelessWidget {
-  final ComplaintTest complaint;
+  final Complaint complaint;
 
   const ActivitiesTab({
     Key? key,
@@ -203,7 +203,7 @@ class ActivitiesTab extends StatelessWidget {
 }
 
 class MembersTab extends StatelessWidget {
-  final ComplaintTest complaint;
+  final Complaint complaint;
 
   const MembersTab({
     Key? key,
@@ -235,7 +235,7 @@ class MembersTab extends StatelessWidget {
 }
 
 class DetailTab extends StatelessWidget {
-  final ComplaintTest complaint;
+  final Complaint complaint;
 
   const DetailTab({
     Key? key,
