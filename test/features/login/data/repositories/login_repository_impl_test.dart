@@ -7,9 +7,9 @@ import 'package:mockito/mockito.dart';
 import 'package:renofax/core/error/exceptions.dart';
 import 'package:renofax/core/error/failures.dart';
 import 'package:renofax/core/network/network_info.dart';
-import 'package:renofax/features/login/data/data_sources/login_remote_data_source.dart';
-import 'package:renofax/features/login/data/models/login_response_model.dart';
-import 'package:renofax/features/login/data/repositories/login_repository_impl.dart';
+import 'package:renofax/features/membership/data/data_sources/login_remote_data_source.dart';
+import 'package:renofax/features/membership/data/models/login_response_model.dart';
+import 'package:renofax/features/membership/data/repositories/login_repository_impl.dart';
 
 import '../../../../fixtures/fixture_reader.dart';
 import 'login_repository_impl_test.mocks.dart';

@@ -2,9 +2,9 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:renofax/features/login/domain/entities/login_reponse.dart';
-import 'package:renofax/features/login/domain/repositories/login_repository.dart';
-import 'package:renofax/features/login/domain/usecases/get_token_access_and_refresh.dart';
+import 'package:renofax/features/membership/domain/entities/login_reponse.dart';
+import 'package:renofax/features/membership/domain/repositories/login_repository.dart';
+import 'package:renofax/features/membership/domain/usecases/get_token_access_and_refresh.dart';
 
 import 'get_token_access_and_refresh_test.mocks.dart';
 

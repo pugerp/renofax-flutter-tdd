@@ -7,9 +7,12 @@ import 'dart:async' as _i4;
 import 'package:dartz/dartz.dart' as _i2;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:renofax/core/error/failures.dart' as _i5;
-import 'package:renofax/features/login/domain/entities/login_reponse.dart'
+import 'package:renofax/features/membership/data/models/login_request.dart'
+    as _i8;
+import 'package:renofax/features/membership/data/models/token.dart' as _i7;
+import 'package:renofax/features/membership/domain/entities/login_reponse.dart'
     as _i6;
-import 'package:renofax/features/login/domain/repositories/login_repository.dart'
+import 'package:renofax/features/membership/domain/repositories/login_repository.dart'
     as _i3;
 
 // ignore_for_file: avoid_redundant_argument_values
@@ -39,4 +42,11 @@ class MockLoginRepository extends _i1.Mock implements _i3.LoginRepository {
           returnValue: Future<_i2.Either<_i5.Failure, _i6.LoginResp>>.value(
               _FakeEither_0<_i5.Failure, _i6.LoginResp>())) as _i4
           .Future<_i2.Either<_i5.Failure, _i6.LoginResp>>);
+  @override
+  _i4.Future<_i2.Either<_i5.Failure, _i7.Token>> getToken(
+          _i8.LoginRequest? req) =>
+      (super.noSuchMethod(Invocation.method(#getToken, [req]),
+              returnValue: Future<_i2.Either<_i5.Failure, _i7.Token>>.value(
+                  _FakeEither_0<_i5.Failure, _i7.Token>()))
+          as _i4.Future<_i2.Either<_i5.Failure, _i7.Token>>);
 }

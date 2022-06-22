@@ -21,8 +21,7 @@ void main() {
   late MockSharedPreferences mockSharedPreferences;
   late Map<String, String> headers;
 
-  final tComplaints = List<Complaint>.from(json
-      .decode(fixture('complaints.json'))
+  final tComplaints = List<Complaint>.from(json.decode(fixture('complaints.json'))
       .map((c) => Complaint.fromJson(c)));
 
   final tComplaint = Complaint.fromJson(json.decode(fixture('complaint.json')));

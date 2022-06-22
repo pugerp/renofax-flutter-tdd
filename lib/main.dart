@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:renofax/core/styles/common_styles.dart';
 import 'package:renofax/features/complainant/presentation/pages/complaint_list_page.dart';
 import 'package:renofax/features/home/presentation/pages/home_page.dart';
 import 'package:renofax/features/splash/presentation/pages/splash_page.dart';
 import 'features/complainant/presentation/pages/complaint_detail_page.dart';
-import 'features/login/presentation/pages/login_page.dart';
+import 'features/membership/presentation/pages/login_page.dart';
 import 'injection_container.dart' as injection;
 
 Future<void> main() async {
@@ -21,7 +22,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Renofax',
-      theme: CommonStyle.themeStyle(context),
+      // theme: CommonStyle.themeStyle(context),
+      theme: ThemeData(
+        brightness: Brightness.dark,
+        textTheme: GoogleFonts.firaCodeTextTheme(Theme.of(context).textTheme).copyWith(
+          headline1: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
+          headline2: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w400),
+          bodyText2: TextStyle(fontSize: 12.0, fontWeight: FontWeight.normal)
+        ),
+      ),
       initialRoute: SplashPage.nameRoute,
       // onGenerateRoute: generateRoute,
       routes: {

@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:renofax/features/login/data/models/login_response_model.dart';
-import 'package:renofax/features/login/domain/entities/login_reponse.dart';
+import 'package:renofax/features/membership/data/models/login_response_model.dart';
+import 'package:renofax/features/membership/domain/entities/login_reponse.dart';
 
 void main() {
   late LoginRespModel tLoginResponse;

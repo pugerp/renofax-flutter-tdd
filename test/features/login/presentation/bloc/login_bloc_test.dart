@@ -5,21 +5,24 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:renofax/core/error/failures.dart';
-import 'package:renofax/features/login/data/models/login_response_model.dart';
-import 'package:renofax/features/login/domain/usecases/get_token_access_and_refresh.dart';
-import 'package:renofax/features/login/presentation/bloc/login_bloc.dart';
+import 'package:renofax/features/membership/data/models/login_response_model.dart';
+import 'package:renofax/features/membership/domain/usecases/get_token_access_and_refresh.dart';
+import 'package:renofax/features/membership/domain/usecases/usecase_login.dart';
+import 'package:renofax/features/membership/presentation/bloc/login_bloc.dart';
 
 import '../../../../fixtures/fixture_reader.dart';
 import 'login_bloc_test.mocks.dart';
 
-@GenerateMocks([GetTokenAccessAndRefresh])
+@GenerateMocks([GetTokenAccessAndRefresh, UsecaseLogin])
 void main() {
   late LoginBloc bloc;
   late MockGetTokenAccessAndRefresh mockGetTokenAccessAndRefresh;
+  late MockUsecaseLogin mockUsecaseLogin;
 
   setUp(() {
     mockGetTokenAccessAndRefresh = MockGetTokenAccessAndRefresh();
-    bloc = LoginBloc(getTokenAccessAndRefresh: mockGetTokenAccessAndRefresh);
+    mockUsecaseLogin = MockUsecaseLogin();
+    bloc = LoginBloc(getTokenAccessAndRefresh: mockGetTokenAccessAndRefresh, login: mockUsecaseLogin);
   });
 
   group('GetToken', () {

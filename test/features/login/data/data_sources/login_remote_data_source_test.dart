@@ -6,16 +6,18 @@ import 'package:mockito/annotations.dart';
 import 'package:http/http.dart' as http;
 import 'package:mockito/mockito.dart';
 import 'package:renofax/core/error/exceptions.dart';
-import 'package:renofax/features/login/data/data_sources/login_remote_data_source.dart';
-import 'package:renofax/features/login/data/models/login_response_model.dart';
+import 'package:renofax/core/network/dio_client.dart';
+import 'package:renofax/features/membership/data/data_sources/login_remote_data_source.dart';
+import 'package:renofax/features/membership/data/models/login_response_model.dart';
 
 import '../../../../fixtures/fixture_reader.dart';
 import 'login_remote_data_source_test.mocks.dart';
 
-@GenerateMocks([http.Client])
+@GenerateMocks([http.Client, DioClient])
 void main() {
   late LoginRemoteDataSourceImpl dataSource;
   late MockClient mockClient;
+  late MockDioClient mockDioClient;
 
   final tUsername = 'renofax-admin';
   final tPassword = 'testament';
@@ -25,7 +27,8 @@ void main() {
 
   setUp(() {
     mockClient = MockClient();
-    dataSource = LoginRemoteDataSourceImpl(client: mockClient);
+    mockDioClient = MockDioClient();
+    dataSource = LoginRemoteDataSourceImpl(client: mockClient, dioClient: mockDioClient);
   });
 
   group('getAccessAndRefreshToken', () {

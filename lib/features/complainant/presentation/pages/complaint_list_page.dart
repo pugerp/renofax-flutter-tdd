@@ -13,21 +13,20 @@ class ComplaintListPage extends StatelessWidget {
 
   const ComplaintListPage({Key? key}) : super(key: key);
 
-  // TODO : trigger event "fetchComplaints" on first render
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-          appBar: AppBar(
-            title: Text('Daftar Aduan'),
-            backgroundColor: Color(0xFF2E2EFF),
-            elevation: 0,
-          ),
-          body: BlocProvider(
-            create: (context) => sl<ComplaintBloc>(),
-            child: buildBlocBuilder(),
-          )),
+        appBar: AppBar(
+          title: Text('Daftar Aduan'),
+          backgroundColor: Color(0xFF2E2EFF),
+          elevation: 0,
+        ),
+        body: BlocProvider(
+          create: (context) => sl<ComplaintBloc>(),
+          child: buildBlocBuilder(),
+        ),
+      ),
     );
   }
 
@@ -191,14 +190,12 @@ class ComplaintListPage extends StatelessWidget {
                   child: InkWell(
                     onTap: () {
                       Navigator.pushNamed(
-                        context,
-                        ComplaintDetailPage.nameRoute,
-                        arguments: <String, dynamic>{
-                          'id': complaint.id,
-                          'title': complaint.title,
-                          'complainant': complaint.complainant,
-                        }
-                      );
+                          context, ComplaintDetailPage.nameRoute,
+                          arguments: <String, dynamic>{
+                            'id': complaint.id,
+                            'title': complaint.title,
+                            'complainant': complaint.complainant,
+                          });
                     },
                     child: Container(
                       padding: EdgeInsets.all(12.0),
@@ -209,16 +206,15 @@ class ComplaintListPage extends StatelessWidget {
                             visible: complaint.priority == 1 ? false : true,
                             child: Text(
                               'High Priority',
-                              style: TextStyle(color: Colors.red),
+                              style: Theme.of(context).textTheme.headline2!.copyWith(
+                                color: Colors.red,
+                                fontSize: 14.0
+                              ),
                             ),
                           ),
                           Text(
                             '${complaint.title}',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 16.0,
-                              fontWeight: FontWeight.w700,
-                            ),
+                            style: Theme.of(context).textTheme.bodyText2,
                           ),
                           SizedBox(
                             height: 8.0,

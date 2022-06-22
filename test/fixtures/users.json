@@ -1,0 +1,26 @@
+[
+  {
+    "id": 17,
+    "username": "renofax-supervisor",
+    "name": "Renofax Supervisor",
+    "url": "https://staging.renofax.com/api/users/renofax-supervisor/",
+    "role": "ADMIN",
+    "permission": {
+      "name": "Admin",
+      "mobile_app_permission": [
+        "can_access_application",
+        "can_access_card",
+        "can_create_card",
+        "can_access_history_card",
+        "can_approve_card",
+        "can_confirm_card"
+      ],
+      "dashboard_permission": [
+        "can_access_dashboard",
+        "can_access_member",
+        "can_invite_member"
+      ]
+    },
+    "avatar": null
+  }
+]

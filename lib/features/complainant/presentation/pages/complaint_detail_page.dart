@@ -81,7 +81,7 @@ class ComplaintDetailPage extends StatelessWidget {
                 } else if (state is Error) {
                   return Container(
                     color: Color(0xFF2E2EFF),
-                    padding: EdgeInsets.all(16.0),
+                     padding: EdgeInsets.all(16.0),
                     child: Card(
                       elevation: 2.0,
                       child: Center(
@@ -225,9 +225,7 @@ class MembersTab extends StatelessWidget {
             ),
           );
         },
-        separatorBuilder: (_, __) => SizedBox(
-          height: 8.0,
-        ),
+        separatorBuilder: (_, __) => SizedBox(height: 8.0,),
         itemCount: complaint.assignments!.length,
       ),
     );

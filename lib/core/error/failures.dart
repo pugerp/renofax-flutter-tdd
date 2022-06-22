@@ -17,5 +17,12 @@ class CacheFailure extends Failure {
 class ConnectionFailure extends Failure {
   @override
   List<Object?> get props => [];
+}
 
+class RequestFailure extends Failure {
+  final String message;
+  RequestFailure({required this.message});
+
+  @override
+  List<Object?> get props => [message];
 }

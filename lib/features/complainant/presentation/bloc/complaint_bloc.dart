@@ -16,7 +16,10 @@ class ComplaintBloc extends Bloc<ComplaintEvent, ComplaintState> {
   final GetComplaints getComplaints;
   final GetComplaintById getComplaintById;
 
-  ComplaintBloc({required this.getComplaints, required this.getComplaintById}) : super(Initial()) {
+  ComplaintBloc({
+    required this.getComplaints,
+    required this.getComplaintById,
+  }) : super(Initial()) {
     on<fetchComplaint>(_fetchComplaints);
     on<fetchComplaintById>(_fetchComplaintByid);
   }
@@ -31,26 +34,23 @@ class ComplaintBloc extends Bloc<ComplaintEvent, ComplaintState> {
 
     emit(
       failedOrSuccess.fold(
-        (failed) => Error(message: 'Failed fetching complaints data'),
-        (response) => Success(complaints: response)
-      ),
+          (failed) => Error(message: 'Failed fetching complaints data'),
+          (response) => Success(complaints: response)),
     );
   }
 
-
   void _fetchComplaintByid(
-      fetchComplaintById event,
-      Emitter<ComplaintState> emit,
-      ) async {
+    fetchComplaintById event,
+    Emitter<ComplaintState> emit,
+  ) async {
     emit(Loading());
 
     final failedOrSuccess = await getComplaintById(Params(id: event.id));
 
     emit(
       failedOrSuccess.fold(
-              (failed) => Error(message: 'Failed fetching complaints data'),
-              (response) => SuccessById(complaint: response)
-      ),
+          (failed) => Error(message: 'Failed fetching complaints data'),
+          (response) => SuccessById(complaint: response)),
     );
   }
 }
